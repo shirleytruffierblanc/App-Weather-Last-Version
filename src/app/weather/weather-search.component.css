@@ -1,0 +1,19 @@
+
+  .form-group label  {
+    color: #888;
+    display: block;
+    text-decoration: none;
+  }
+  
+  .form-group input {
+    color: blue;
+  }
+  
+  .form-group button{
+    background:#4CAF50;
+    border: 1px solid green; /* Green border */
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}

@@ -2,9 +2,7 @@
   <form   >
      <div class="form-group">
       <label for="city">City Name:</label>
-      <!-- <input ngControl="location" class="form-control" type="text" placeholder="Enter city name" id="city" (input)="onSearchLocation(input.value)" required #input > -->
-
-     <!--  two ways data binding through [(ngModel)]  -->
+      
       <input class="form-control" type="text" placeholder="Enter city name" id="city" [(ngModel)] ="cityName" name="cityname" (input)="onSearchLocationWithEvent($event)">  
 
       </div>
@@ -13,4 +11,4 @@
       {{cityName}}            
   </form>          
   <weather-list [WeatherForecastList]="weatherForecastData"></weather-list> 
-</section
+</section>

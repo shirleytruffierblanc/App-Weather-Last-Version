@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'weather-app-root',
+  templateUrl:'./app.component.html',
+ // styleUrls: ['./app.component.css']
+ //styleUrls: ['../style.css'] car nous n en avons pas besoin
 })
 export class AppComponent {
-  title = 'Weather app works';
+  title = 'Angular2, Weather app works!';
 }

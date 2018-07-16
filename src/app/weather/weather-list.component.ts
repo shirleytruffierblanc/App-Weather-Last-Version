@@ -12,12 +12,14 @@ import { Router } from '@angular/router';
 export class WeatherListComponent implements OnInit {
   @Input('WeatherForecastList') weathers: any;
   errorMessage: string;
+
   constructor(private _weatherService: WeatherService,
               private router: Router){
-
+  
   }
 
   ngOnInit():any {
+    }
 
     gotoDetailpage(id: number): any {
       this.router.navigate(['/detail-page', id]);
