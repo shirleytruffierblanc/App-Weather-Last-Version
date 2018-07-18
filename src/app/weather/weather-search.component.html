@@ -1,14 +1,32 @@
 <section class="weather-search" class="form-group">
-  <form   >
-     <div class="form-group">
-      <label for="city">City Name:</label>
-      
+  <form >
+      <br/><br/><br/>
+     <div class="form-group" >
+      <label for="city"> City Name research : </label>
       <input class="form-control" type="text" placeholder="Enter city name" id="city" [(ngModel)] ="cityName" name="cityname" (input)="onSearchLocationWithEvent($event)">  
+      <input class="form-control" type="text" placeholder="Enter country code" id="city" [(ngModel)] ="countryCode" name="countrycode" (input)="onSearchLocationWithEventDateCountryCode($event)">  
+      <input class="form-control" type="text" placeholder="Enter number of days" id="city" [(ngModel)] ="dateWeather" name="dateweather" (input)="onSearchLocationWithEventDate($event)">  
+    </div>
 
-      </div>
-      <button class="btn btn-primary" [disabled]="disabledForecastButton" (click) ="onSubmitDatabinding()" type="submit">Forecast</button>
-      {{disabledForecastButton}} 
-      {{cityName}}            
+      <button type= "button" class="btn btn-secondary btn-lg" [disabled]="disabledForecastButton" (click) ="onSubmitDatabinding()" type="submit">Research</button>
+      
+      <br/><br/><br/>
+      <br/><br/>
+      
+    <div class ="page-coordinates">
+        <label for ="coordinates"> Coordinates research : </label>
+        <input class = "page-coordinates" type = "text"  ng-model = "lat" placeholder="Enter Latitude" id = "coordinates"  name="CoordiGeoLat" (input)=onSearchLocationWithEventCoodiLat($event) > 
+        <input class = "page-coordinates" type = "text"  ng-model = "lon" placeholder="Enter Longitude" id = "coordinates"  name="CoordiGeoLon" (input)=onSearchLocationWithEventCoodiLon($event) > 
+        <input class = "page-coordinates" type = "text"  ng-model = "cnt" placeholder="Enter number of day" id = "coordinates"  name="CoordiDate" (input)=onSearchLocationWithEventCoodidate($event) > 
+    </div>  
+
+      <br/>
+    <button type= "button" class="btn btn-secondary btn-lg" [disabled]="disabledForecastButtonCoordi"  (click) ="onSubmitDatabindingCoordi()" type="submit">Research</button>
+    
   </form>          
   <weather-list [WeatherForecastList]="weatherForecastData"></weather-list> 
+  <weather-list [WeatherForecastList]="weatherForecastDataCoordi"></weather-list> 
 </section>
+
+
+

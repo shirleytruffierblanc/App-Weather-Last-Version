@@ -3,7 +3,6 @@ import { WEATHER_LIST } from './weather.data';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs';
 import 'rxjs/Rx';
-import { APP_CONFIG, IAppConfig } from '../app.config';
 import { environment } from '../../environments/environment';
 import { catchError, map } from 'rxjs/operators';
 import { Weather } from './weather';
@@ -14,33 +13,59 @@ export class WeatherService {
   
   
   constructor(private http: Http) { 
-     console.log('Production='+ environment.production);
+     //console.log('Production='+ environment.production);
 
   }
 
   getWeatherItems(){
     	return WEATHER_LIST;
   } 
-
-  getWeatheritemsbyCity(cityName): Observable<any>{
+// research with cityname
+  getWeatheritemsbyCity(cityName, dateWeather, countryCode): Observable<any>{
 
     	 return this.http.get(
          environment.baseUrl +
-         'weather?q='+ cityName +
-         '&appid='+ environment.appId +
-         '&units=' + environment.units
+         'forecast?q='+ cityName +
+         ',' + countryCode +
+         '&units=' +environment.units+
+         '&cnt=' + dateWeather
          )
     	 .pipe(map((response: any) => response.json()))
     	 .pipe(catchError(this.handleError))
   }
 
-  getWeatherForecast(cityName): Observable<any[]>{
+  getWeatherForecast(cityName, dateWeather,countryCode): Observable<any[]>{
 
-     return this.http.get(environment.baseUrl +'forecast?q='+ cityName +'&appid='+ environment.appId +'&units=' + environment.units)
+     return this.http.get(environment.baseUrl +'forecast?q='+ cityName +',' + countryCode  +'&cnt=' + dateWeather + '&appid='+ environment.appId)
      .pipe(map((response :any) => this.extractData(response)))
      .pipe(catchError(this.handleError))
       }
+ 
 
+//research with coordinates
+
+getWeatheritemsbyCoordinate(GeoCoordinatesLat, GeoCoordinatesLon, dateWeatherCoord): Observable<any>{
+
+  return this.http.get(
+    environment.baseUrl +
+    'forecast?lat='+ GeoCoordinatesLat +
+    '&lon='+ GeoCoordinatesLon +
+    '&cnt=' + dateWeatherCoord +
+    '&appid='+ environment.appId 
+    )
+  .pipe(map((response: any) => response.json()))
+  .pipe(catchError(this.handleError))
+}
+
+getWeatherForecastCoordinate(GeoCoordinatesLat, GeoCoordinatesLon, dateWeatherCoord): Observable<any[]>{
+
+return this.http.get(environment.baseUrl + 'forecast?lat='+ GeoCoordinatesLat +'&lon='+ GeoCoordinatesLon + '&cnt=' + dateWeatherCoord + '&appid='+ environment.appId)
+.pipe(map((response :any) => this.extractData(response)))
+.pipe(catchError(this.handleError))
+ }
+
+
+// --------------------------------------gestion des messages d erreur -------------------------------------------------// 
   private extractData(res: any) {
     let body = res.json();
     return body.list || { };
@@ -55,3 +80,4 @@ export class WeatherService {
     return Observable.throw(errMsg);
   }
 }
+

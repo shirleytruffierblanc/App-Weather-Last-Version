@@ -8,5 +8,5 @@ import { Weather } from './weather';
 })
 export class WeatherItemComponent {
     @Input('WeatherItem') weather: Weather;
- 
+   
 }
