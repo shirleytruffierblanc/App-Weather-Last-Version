@@ -1,12 +1,19 @@
 <article>
         <br/><br/>
-        <p>Weather : </p>
-    <div>
-            
-            <p> {{ weather.weather[0].description }}</p>
-            <p>Wind speed (meter/sec): {{ weather.wind.speed }}</p>
-            <!--<img src="http://openweathermap.org/img/w/{{weather.main.icon}}.png">-->
+       
+    <div class = "resultats">
+
+            <label> Weather : </label>
+            <p> {{ weather.weather[0].description }}</p> 
+         <!--<img src="http://openweathermap.org/img/w/{{weather.icon}}.png" >-->
+  
+         <img src = "http://openweathermap.org/img/w/01d.png">
+        
+
+         <p>Wind speed (meter/sec): {{ weather.wind.speed }}</p>
             <span class="temperature">Temperature (Fahrenheit): {{ ((weather.main.temp) -273.15)*1.8+32 }} </span>
+            <br/>
+            <span class="temperatureCelsius">Temperature (Celsius): {{ ((weather.main.temp) -273.15) }} </span>
     </div>
     <br/><br/>
 </article>

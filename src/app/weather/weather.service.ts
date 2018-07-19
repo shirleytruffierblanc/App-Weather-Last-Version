@@ -65,6 +65,9 @@ return this.http.get(environment.baseUrl + 'forecast?lat='+ GeoCoordinatesLat +'
  }
 
 
+
+
+
 // --------------------------------------gestion des messages d erreur -------------------------------------------------// 
   private extractData(res: any) {
     let body = res.json();

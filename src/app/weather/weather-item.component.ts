@@ -6,6 +6,9 @@ import { Weather } from './weather';
   templateUrl: './weather-item.component.html'   
         
 })
+
+
+
 export class WeatherItemComponent {
     @Input('WeatherItem') weather: Weather;
    

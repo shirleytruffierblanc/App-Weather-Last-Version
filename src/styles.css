@@ -1,9 +1,6 @@
-body { 
-	background-color: navyblue;  
-}
 
 h1 {
-    color: #8a6133; 
+    color: #f5f5f5; 
     font-family: 'Trocchi', serif; 
     font-size: 45px; 
     font-weight: normal; 
@@ -22,22 +19,35 @@ h1 {
 	text-align: left;
 }
 
-div {
+div{
+    width: 500px;
+    padding: 34px;
+    margin: 0; 
+    background-color: rgb(51, 51, 87);
+}
+
+div.page-coordinates {
     width: 320px;
     padding: 34px;
-    border: 5px solid gray;
+    border: 0px solid rgb(186, 235, 73);
+    background-color: rgb(207, 192, 107);
+   
+    margin: 0; 
+}
+div.form-group {
+    width: 320px;
+    padding: 34px;
+    border: 0px solid gray;
+    background-color: rgb(207, 192, 107);
     margin: 0; 
 }
 
-p.uppercase {
-    text-transform: uppercase;
+div.resultats{
+    width: 500px;
+    padding: 34px;
+    border: 0px solid gray;
+    background-color: rgb(207, 192, 107);
+    margin: 0; 
 }
 
-p.lowercase {
-    text-transform: lowercase;
-}
 
-img{
-    width: 60%;
-    margin:0 20%;
-}
