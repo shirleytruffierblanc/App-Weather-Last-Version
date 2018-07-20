@@ -6,7 +6,8 @@ h1 {
     font-weight: normal; 
     line-height: 48px; 
     text-align: center;
-    margin: 0; 
+    margin: 0;
+    
 }
 .weather-search {
 	text-align: center;
@@ -18,6 +19,7 @@ h1 {
 .temperature {
 	text-align: left;
 }
+
 
 div{
     width: 500px;
@@ -31,7 +33,7 @@ div.page-coordinates {
     padding: 34px;
     border: 0px solid rgb(186, 235, 73);
     background-color: rgb(207, 192, 107);
-   
+    border-radius:10px 50px;
     margin: 0; 
 }
 div.form-group {
@@ -39,6 +41,7 @@ div.form-group {
     padding: 34px;
     border: 0px solid gray;
     background-color: rgb(207, 192, 107);
+    border-radius:10px 50px;
     margin: 0; 
 }
 
@@ -47,6 +50,7 @@ div.resultats{
     padding: 34px;
     border: 0px solid gray;
     background-color: rgb(207, 192, 107);
+    border-radius:10px 50px;
     margin: 0; 
 }
 
